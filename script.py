@@ -6,6 +6,18 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
+import requests
+
+url = "https://api-football-beta.p.rapidapi.com/timezone"
+
+headers = {
+	"X-RapidAPI-Key": "e9f2824844mshc1c978f851f7e8cp1c72f2jsn9da392e99904",
+	"X-RapidAPI-Host": "api-football-beta.p.rapidapi.com"
+}
+
+response = requests.get(url, headers=headers)
+
+print(response.json())
 
 # Beispiel-Daten generieren
 np.random.seed(0)
